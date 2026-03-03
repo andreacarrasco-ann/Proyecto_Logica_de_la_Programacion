@@ -143,6 +143,7 @@ while otroproducto == '1':
             nombre = "Blush"
         elif opcionm2 == '0':
             print("\n↩ Regresando al Menú Principal...")
+            
         cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
         subtotal = precio * cantidad
         total += subtotal
@@ -185,6 +186,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
