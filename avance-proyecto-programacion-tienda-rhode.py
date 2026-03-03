@@ -2,7 +2,7 @@
 #               TIENDA RHODE - MENÚ DE PRODUCTOS
 # ============================================================
 
-
+preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00]
 otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
 total = 0.0         # Total acumulado de la compra
 
@@ -33,19 +33,19 @@ while otroproducto == '1':
 → """)
 
         if opcionm2 == '1':
-            precio = 16.00
+            precio = preciosLip[0]
             nombre = "Pep Lip"
         elif opcionm2 == '2':
-            precio = 18.00
+            precio = preciosLip[1]
             nombre = "Lip Tint"
         elif opcionm2 == '3':
-            precio = 20.00
+            precio = preciosLip[2]
             nombre = "Blush Lip"
         elif opcionm2 == '4':
-            precio = 22.00
+            precio = preciosLip[3]
             nombre = "Barrier Lip"
         elif opcionm2 == '5':
-            precio = 30.00
+            precio = preciosLip[4]
             nombre = "Lip Boost"
         elif opcionm2 == '0':
             print("\n↩ Regresando al Menú Principal...")
@@ -188,5 +188,6 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
