@@ -143,7 +143,7 @@ while otroproducto == '1':
             nombre = "Blush"
         elif opcionm2 == '0':
             print("\n↩ Regresando al Menú Principal...")
-             continue
+            continue
         else:
             print("\n Opción inválida. Intenta de nuevo.")
             continue
@@ -190,6 +190,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
