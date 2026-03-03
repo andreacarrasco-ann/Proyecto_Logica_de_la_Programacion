@@ -14,9 +14,8 @@ while otroproducto == '1':
        BIENVENIDA A RHODE     
 ╚══════════════════════════════╝
  1. Lip Products (Labiales)
- 2. Skin Care (Cuidado de piel)
- 3. Face Color (Blush y más)
- 4. Limited Edition (Edición Limitada) 
+ 2. Face Color (Blush y más)
+ 3. Limited Edition (Edición Limitada) 
  0. Salir
 → """)
 
@@ -66,54 +65,9 @@ while otroproducto == '1':
 
 
 
-    # ======================== 2. SKIN CARE ========================
+
+    # ======================== 2. FACE COLOR ========================
     elif opcionm1 == '2':
-
-        opcionm2 = input("""
-── SKIN CARE ──
- 1. Peptide Glazing Fluid
- 2. Barrier Restore Cream
- 3. Cleansing Balm
- 4. Pore Blur Sunscreen SPF 30
- 5. Glazing Milk
- 0. Menú Principal
-→ """)
-
-        if opcionm2 == '1':
-            precio = 29.00
-            nombre = "Peptide Glazing Fluid"
-        elif opcionm2 == '2':
-            precio = 32.00
-            nombre = "Barrier Restore Cream"
-        elif opcionm2 == '3':
-            precio = 26.00
-            nombre = "Cleansing Balm"
-        elif opcionm2 == '4':
-            precio = 28.00
-            nombre = "Pore Blur Sunscreen SPF 30"
-        elif opcionm2 == '5':
-            precio = 24.00
-            nombre = "Glazing Milk"
-        elif opcionm2 == '0':
-            print("\n↩ Regresando al Menú Principal...")
-            continue
-        else:
-            print("\n Opción inválida. Intenta de nuevo.")
-            continue
-
-        cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
-        subtotal = precio * cantidad
-        total += subtotal
-
-        print(f"\n Producto:  {nombre}")
-        print(f"   Cantidad:  {cantidad}")
-        print(f"   Subtotal:  L.{subtotal:.2f}")
-        print(f"   Total acumulado: L.{total:.2f}")
-
-
-
-    # ======================== 3. FACE COLOR ========================
-    elif opcionm1 == '3':
 
         opcionm2 = input("""
 ── FACE COLOR ──
@@ -157,8 +111,8 @@ while otroproducto == '1':
         print(f"   Total acumulado: L.{total:.2f}")
 
 
-    # ======================== 4. LIMITED EDITION ========================
-    elif opcionm1 == '4':
+    # ======================== 3. LIMITED EDITION ========================
+    elif opcionm1 == '3':
 
         opcionm2 = input("""
 ── LIMITED EDITION ──
@@ -234,3 +188,4 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
