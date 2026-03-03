@@ -60,7 +60,7 @@ while otroproducto == '1':
 
         cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → ")) # La F-string lo usamos porque queremos combinar texto con variables en una misma línea
         subtotal = precio * cantidad
-        total += subtotal
+        total += subtotal # += Es un atajo, lo usamos porque queremos sumarle algo a una variable que ya existe.
 
         print(f"\n Producto:  {nombre}")
         print(f"   Cantidad:  {cantidad}")
@@ -192,6 +192,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
