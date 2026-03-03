@@ -3,6 +3,7 @@
 # ============================================================
 # ================= ARREGLOS DE PRECIOS ======================
 preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00]
+preciosFace = [24.00, 26.00, 22.00, 28.00, 30.00]
 otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
 total = 0.0         # Total acumulado de la compra
 
@@ -72,28 +73,28 @@ while otroproducto == '1':
         opcionm2 = input("""
 ── FACE COLOR ──
  1. Pocket Blush
- 2. Toasted Teddy Blush
+ 2. Teddy Blush
  3. Freckle Tint
- 4. Glow Balm Highlighter
- 5. Soft Sculpt Bronzer
+ 4. Glow Balm
+ 5. Soft Sculpt
  0. Menú Principal
 → """)
 
         if opcionm2 == '1':
-            precio = 24.00
+            precio = preciosFace[0]
             nombre = "Pocket Blush"
         elif opcionm2 == '2':
-            precio = 26.00
-            nombre = "Toasted Teddy Blush"
+            precio = preciosFace[1]
+            nombre = "Teddy Blush"
         elif opcionm2 == '3':
-            precio = 22.00
+            precio = preciosFace[2]
             nombre = "Freckle Tint"
         elif opcionm2 == '4':
-            precio = 28.00
-            nombre = "Glow Balm Highlighter"
+            precio = preciosFace[3]
+            nombre = "Glow Balm"
         elif opcionm2 == '5':
-            precio = 30.00
-            nombre = "Soft Sculpt Bronzer"
+            precio = preciosFace[4]
+            nombre = "Soft Sculpt"
         elif opcionm2 == '0':
             print("\n↩ Regresando al Menú Principal...")
             continue
@@ -188,6 +189,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
