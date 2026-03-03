@@ -1,7 +1,7 @@
 # ============================================================
 #               TIENDA RHODE - MENÚ DE PRODUCTOS
 # ============================================================
-
+# ================= ARREGLOS DE PRECIOS ======================
 preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00]
 otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
 total = 0.0         # Total acumulado de la compra
@@ -188,6 +188,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
