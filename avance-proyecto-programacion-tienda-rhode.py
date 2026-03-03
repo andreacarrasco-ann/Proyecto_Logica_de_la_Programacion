@@ -24,26 +24,26 @@ while otroproducto == '1':
 
         opcionm2 = input("""
 ── LIP PRODUCTS ──
- 1. Peptide Lip Treatment
+ 1. Pep Lip 
  2. Lip Tint
- 3. Pocket Blush Lip
- 4. Barrier Lip Treatment
+ 3. Blush Lip
+ 4. Barrier Lip
  5. Lip Boost
  0. Menú Principal
 → """)
 
         if opcionm2 == '1':
             precio = 16.00
-            nombre = "Peptide Lip Treatment"
+            nombre = "Pep Lip"
         elif opcionm2 == '2':
             precio = 18.00
             nombre = "Lip Tint"
         elif opcionm2 == '3':
             precio = 20.00
-            nombre = "Pocket Blush Lip"
+            nombre = "Blush Lip"
         elif opcionm2 == '4':
             precio = 22.00
-            nombre = "Barrier Lip Treatment"
+            nombre = "Barrier Lip"
         elif opcionm2 == '5':
             precio = 30.00
             nombre = "Lip Boost"
@@ -188,4 +188,5 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
