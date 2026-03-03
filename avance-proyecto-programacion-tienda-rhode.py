@@ -2,15 +2,17 @@
 #               TIENDA RHODE - MENÚ DE PRODUCTOS
 # ============================================================
 # ================= ARREGLOS DE PRECIOS ======================
-preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00]
-preciosFace = [24.00, 26.00, 22.00, 28.00, 30.00]
-preciosLimited = [72.00, 56.00, 78.00, 29.00, 20.00]
+# En los arreglos colocamos el precio de los productos
+preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00] #Precio de los labiales 
+preciosFace = [24.00, 26.00, 22.00, 28.00, 30.00] #Precio de los blush
+preciosLimited = [72.00, 56.00, 78.00, 29.00, 20.00] #Precio de Edición Limitada
 otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
 total = 0.0         # Total acumulado de la compra
 
 while otroproducto == '1':
 
     # ======================== MENÚ PRINCIPAL ========================
+    # Escribimos triple comilla para escribir texto en varias líneas reales sin tener que poner \n cada rato.
     opcionm1 = input("""
 ╔══════════════════════════════╗
        BIENVENIDA A RHODE     
@@ -56,14 +58,14 @@ while otroproducto == '1':
             print("\n Opción inválida. Intenta de nuevo.")
             continue
 
-        cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
+        cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → ")) # La F-string lo usamos porque queremos combinar texto con variables en una misma línea
         subtotal = precio * cantidad
         total += subtotal
 
         print(f"\n Producto:  {nombre}")
         print(f"   Cantidad:  {cantidad}")
         print(f"   Subtotal:  L.{subtotal:.2f}")
-        print(f"   Total acumulado: L.{total:.2f}")
+        print(f"   Total acumulado: L.{total:.2f}") # El :.2f dentro de las llaves significa "muestra solo 2 decimales".
 
 
 
@@ -190,6 +192,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
