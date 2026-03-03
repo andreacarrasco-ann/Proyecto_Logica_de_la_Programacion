@@ -4,7 +4,7 @@
 # ================= ARREGLOS DE PRECIOS ======================
 preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00]
 preciosFace = [24.00, 26.00, 22.00, 28.00, 30.00]
-preciosLimited = [72.00, 56.00, 78.00, 29.00, 20]
+preciosLimited = [72.00, 56.00, 78.00, 29.00, 20.00]
 otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
 total = 0.0         # Total acumulado de la compra
 
@@ -185,6 +185,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
