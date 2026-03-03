@@ -4,6 +4,7 @@
 # ================= ARREGLOS DE PRECIOS ======================
 preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00]
 preciosFace = [24.00, 26.00, 22.00, 28.00, 30.00]
+preciosLimited = [72.00, 56.00, 78.00, 29.00, 20]
 otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
 total = 0.0         # Total acumulado de la compra
 
@@ -117,36 +118,31 @@ while otroproducto == '1':
 
         opcionm2 = input("""
 ── LIMITED EDITION ──
- 1. Scented Peptide Lip Tint Set
- 2. Peptide Lip Trio Set
- 3. Winter Limited Kit
- 4. Lemontini Limited Lip Tint
- 5. Limited Edition Pocket Blush
+ 1. Lip Tint
+ 2. Lip Trio
+ 3. Winter
+ 4. Tint
+ 5. Blush
  0. Menú Principal
 → """)
 
         if opcionm2 == '1':
-            precio = 72.00  
-            nombre = "Scented Peptide Lip Tint Set"
+            precios = preciosLimited[0] 
+            nombre = "Lip Tint"
         elif opcionm2 == '2':
-            precio = 56.00  # Trio de tintes
-            nombre = "Peptide Lip Trio Set"
+            precios = preciosLimited[1]  # Trio de tintes
+            nombre = "Lip Trio"
         elif opcionm2 == '3':
-            precio = 78.00  
-            nombre = "Winter Limited Kit"
+            precios = preciosLimited[2] 
+            nombre = "Winter"
         elif opcionm2 == '4':
-            precio = 29.00  
-            nombre = "Lemontini Limited Lip Tint"
+            precios = preciosLimited[3] 
+            nombre = "Tint"
         elif opcionm2 == '5':
-            precio = 20.00   
-            nombre = "Limited Edition Pocket Blush"
+            precios = preciosLimited[4] 
+            nombre = "Blush"
         elif opcionm2 == '0':
             print("\n↩ Regresando al Menú Principal...")
-            continue
-        else:
-            print("\n Opción inválida. Intenta de nuevo.")
-            continue
-
         cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
         subtotal = precio * cantidad
         total += subtotal
@@ -189,6 +185,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
