@@ -121,7 +121,7 @@ while otroproducto == '1':
  1. Lip Tint
  2. Lip Trio
  3. Winter
- 4. Tint
+ 4. Mascara
  5. Blush
  0. Menú Principal
 → """)
@@ -137,7 +137,7 @@ while otroproducto == '1':
             nombre = "Winter"
         elif opcionm2 == '4':
             precios = preciosLimited[3] 
-            nombre = "Tint"
+            nombre = "Mascara"
         elif opcionm2 == '5':
             precios = preciosLimited[4] 
             nombre = "Blush"
@@ -185,6 +185,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
