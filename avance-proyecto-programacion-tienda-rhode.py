@@ -127,19 +127,19 @@ while otroproducto == '1':
 → """)
 
         if opcionm2 == '1':
-            precios = preciosLimited[0] 
+            precio = preciosLimited[0] 
             nombre = "Lip Tint"
         elif opcionm2 == '2':
-            precios = preciosLimited[1]  # Trio de tintes
+            precio = preciosLimited[1]  # Trio de tintes
             nombre = "Lip Trio"
         elif opcionm2 == '3':
-            precios = preciosLimited[2] 
+            precio = preciosLimited[2] 
             nombre = "Winter"
         elif opcionm2 == '4':
-            precios = preciosLimited[3] 
+            precio = preciosLimited[3] 
             nombre = "Mascara"
         elif opcionm2 == '5':
-            precios = preciosLimited[4] 
+            precio = preciosLimited[4] 
             nombre = "Blush"
         elif opcionm2 == '0':
             print("\n↩ Regresando al Menú Principal...")
@@ -190,6 +190,7 @@ while otroproducto == '1':
 ╚══════════════════════════════╝
 """)
         break
+
 
 
 
