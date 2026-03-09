@@ -6,203 +6,191 @@
 preciosLip    = [16.00, 18.00, 20.00, 22.00, 30.00] #Precio de los labiales 
 preciosFace = [24.00, 26.00, 22.00, 28.00, 30.00] #Precio de los blush
 preciosLimited = [72.00, 56.00, 78.00, 29.00, 20.00] #Precio de Edición Limitada
-otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
-total = 0.0         # Total acumulado de la compra
 
-while otroproducto == '1':
+# ================= CARRITO GENERAL ======================
+carrito = [] #Una lista vacía que irá llenándose con los productos que el usuario elija.
 
-    # ======================== MENÚ PRINCIPAL ========================
-    # Escribimos triple comilla para escribir texto en varias líneas reales sin tener que poner \n cada rato.
-    opcionm1 = input("""
+# ================= FUNCIONES ======================
+def menuPrincipal():
+    # El input() muestra el menú y espera que el usuario escriba. Lo que escribe se guarda en opcion y se retorna al programa principal.
+    opcion = input("""
 ╔══════════════════════════════╗
-       BIENVENIDA A RHODE     
+      BIENVENIDA A RHODE
 ╚══════════════════════════════╝
- 1. Lip Products (Labiales)
- 2. Face Color (Blush y más)
- 3. Limited Edition (Edición Limitada) 
- 0. Salir
+1. Lip Products (Labiales)
+2. Face Color (Blush y más)
+3. Limited Edition (Edición Limitada)
+0. Salir
 → """)
+    return opcion # devuelve "1", "2", "3" o "0"
 
-    # ======================== 1. LIP PRODUCTS ========================
-    if opcionm1 == '1':
-
-        opcionm2 = input("""
+def menuLip():
+    opcion = input("""
 ── LIP PRODUCTS ──
- 1. Pep Lip 
- 2. Lip Tint
- 3. Blush Lip
- 4. Barrier Lip
- 5. Lip Boost
- 0. Menú Principal
+1. Pep Lip
+2. Lip Tint
+3. Blush Lip
+4. Barrier Lip
+5. Lip Boost
+0. Menú Principal
 → """)
+    return opcion
 
-        if opcionm2 == '1':
-            precio = preciosLip[0]
-            nombre = "Pep Lip"
-        elif opcionm2 == '2':
-            precio = preciosLip[1]
-            nombre = "Lip Tint"
-        elif opcionm2 == '3':
-            precio = preciosLip[2]
-            nombre = "Blush Lip"
-        elif opcionm2 == '4':
-            precio = preciosLip[3]
-            nombre = "Barrier Lip"
-        elif opcionm2 == '5':
-            precio = preciosLip[4]
-            nombre = "Lip Boost"
-        elif opcionm2 == '0':
-            print("\n↩ Regresando al Menú Principal...")
-            continue
-        else:
-            print("\n Opción inválida. Intenta de nuevo.")
-            continue
-
-        cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → ")) # La F-string lo usamos porque queremos combinar texto con variables en una misma línea
-        subtotal = precio * cantidad
-        total += subtotal # += Es un atajo, lo usamos porque queremos sumarle algo a una variable que ya existe.
-
-        print(f"\n Producto:  {nombre}")
-        print(f"   Cantidad:  {cantidad}")
-        print(f"   Subtotal:  L.{subtotal:.2f}")
-        print(f"   Total acumulado: L.{total:.2f}") # El :.2f dentro de las llaves significa "muestra solo 2 decimales".
-
-
-
-
-    # ======================== 2. FACE COLOR ========================
-    elif opcionm1 == '2':
-
-        opcionm2 = input("""
+def menuFace():
+    opcion = input("""
 ── FACE COLOR ──
- 1. Pocket Blush
- 2. Teddy Blush
- 3. Freckle Tint
- 4. Glow Balm
- 5. Soft Sculpt
- 0. Menú Principal
+1. Pocket Blush
+2. Teddy Blush
+3. Freckle Tint
+4. Glow Balm
+5. Soft Sculpt
+0. Menú Principal
 → """)
+    return opcion
 
-        if opcionm2 == '1':
-            precio = preciosFace[0]
-            nombre = "Pocket Blush"
-        elif opcionm2 == '2':
-            precio = preciosFace[1]
-            nombre = "Teddy Blush"
-        elif opcionm2 == '3':
-            precio = preciosFace[2]
-            nombre = "Freckle Tint"
-        elif opcionm2 == '4':
-            precio = preciosFace[3]
-            nombre = "Glow Balm"
-        elif opcionm2 == '5':
-            precio = preciosFace[4]
-            nombre = "Soft Sculpt"
-        elif opcionm2 == '0':
-            print("\n↩ Regresando al Menú Principal...")
-            continue
-        else:
-            print("\n Opción inválida. Intenta de nuevo.")
-            continue
-
-        cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
-        subtotal = precio * cantidad
-        total += subtotal
-
-        print(f"\n Producto:  {nombre}")
-        print(f"   Cantidad:  {cantidad}")
-        print(f"   Subtotal:  L.{subtotal:.2f}")
-        print(f"   Total acumulado: L.{total:.2f}")
-
-
-    # ======================== 3. LIMITED EDITION ========================
-    elif opcionm1 == '3':
-
-        opcionm2 = input("""
+def menuLimited():
+    opcion = input("""
 ── LIMITED EDITION ──
- 1. Lip Tint
- 2. Lip Trio
- 3. Winter
- 4. Mascara
- 5. Blush
- 0. Menú Principal
+1. Lip Tint
+2. Lip Trio
+3. Winter
+4. Mascara
+5. Blush
+0. Menú Principal
 → """)
+    return opcion
 
+# ================= AGREGAR AL CARRITO ======================
+def agregarCarrito(nombre, cantidad, precio): #Recibe 3 parámetros y los mete como una lista dentro del carrito usando `.append()`.
+    carrito.append([nombre, cantidad, precio]) #append() agrega un elemento al final de la lista.
+
+# ================= FACTURA FINAL ======================
+def mostrarFactura():
+    print("""
+╔══════════════════════════════════╗
+           FACTURA RHODE
+╚══════════════════════════════════╝
+""")
+    total = 0
+    for producto in carrito: # El for recorre cada producto del carrito uno por uno y calcula el subtotal de cada uno, acumulándolo en total.
+        nombre = producto[0] # extrae posición 0 → nombre
+        cantidad = producto[1] # extrae posición 1 → cantidad
+        precio = producto[2] # extrae posición 2 → precio
+        subtotal = cantidad * precio
+        total += subtotal # va acumulando el total
+        print(f"Producto : {nombre}")
+        print(f"Cantidad : {cantidad}")
+        print(f"Precio   : L.{precio:.2f}")
+        print(f"Subtotal : L.{subtotal:.2f}")
+        print("-----------------------------")
+    print(f"\nTOTAL FINAL: L.{total:.2f}") #El :.2f significa mostrar exactamente 2 decimales
+    print("""
+╔══════════════════════════════════╗
+     Gracias por comprar en RHODE
+╚══════════════════════════════════╝
+""")
+
+# ================= PROGRAMA PRINCIPAL ======================
+
+otroproducto = '1'  # Variable para saber si el cliente quiere seguir comprando
+while otroproducto == '1':
+    opcionm1 = menuPrincipal() # llama al menú y guarda lo que eligió
+    # ================= LIP PRODUCTS ======================
+    if opcionm1 == '1': # eligió Lip Products
+        opcionm2 = menuLip() # muestra submenú de labiales
         if opcionm2 == '1':
-            precio = preciosLimited[0] 
-            nombre = "Lip Tint"
+            nombre = "Pep Lip"
+            precio = preciosLip[0]  # busca el precio en el arreglo
         elif opcionm2 == '2':
-            precio = preciosLimited[1]  # Trio de tintes
-            nombre = "Lip Trio"
+            nombre = "Lip Tint"
+            precio = preciosLip[1]
         elif opcionm2 == '3':
-            precio = preciosLimited[2] 
-            nombre = "Winter"
+            nombre = "Blush Lip"
+            precio = preciosLip[2]
         elif opcionm2 == '4':
-            precio = preciosLimited[3] 
-            nombre = "Mascara"
+            nombre = "Barrier Lip"
+            precio = preciosLip[3]
         elif opcionm2 == '5':
-            precio = preciosLimited[4] 
-            nombre = "Blush"
+            nombre = "Lip Boost"
+            precio = preciosLip[4]
         elif opcionm2 == '0':
-            print("\n↩ Regresando al Menú Principal...")
+            continue # vuelve al inicio del while sin comprar
+        else:
+            print("Opción inválida")
+            continue
+
+    # ================= FACE COLOR ======================
+    elif opcionm1 == '2':
+        opcionm2 = menuFace()
+        if opcionm2 == '1':
+            nombre = "Pocket Blush"
+            precio = preciosFace[0]
+        elif opcionm2 == '2':
+            nombre = "Teddy Blush"
+            precio = preciosFace[1]
+        elif opcionm2 == '3':
+            nombre = "Freckle Tint"
+            precio = preciosFace[2]
+        elif opcionm2 == '4':
+            nombre = "Glow Balm"
+            precio = preciosFace[3]
+        elif opcionm2 == '5':
+            nombre = "Soft Sculpt"
+            precio = preciosFace[4]
+        elif opcionm2 == '0':
             continue
         else:
-            print("\n Opción inválida. Intenta de nuevo.")
+            print("Opción inválida")
             continue
-            
-        cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
-        subtotal = precio * cantidad
-        total += subtotal
 
-        print(f"\n Producto:  {nombre}")
-        print(f"   Cantidad:  {cantidad}")
-        print(f"   Subtotal:  L.{subtotal:.2f}")
-        print(f"   Total acumulado: L.{total:.2f}")
+    # ================= LIMITED EDITION ======================
+    elif opcionm1 == '3':
+        opcionm2 = menuLimited()
+        if opcionm2 == '1':
+            nombre = "Lip Tint"
+            precio = preciosLimited[0]
+        elif opcionm2 == '2':
+            nombre = "Lip Trio"
+            precio = preciosLimited[1]
+        elif opcionm2 == '3':
+            nombre = "Winter"
+            precio = preciosLimited[2]
+        elif opcionm2 == '4':
+            nombre = "Mascara"
+            precio = preciosLimited[3]
+        elif opcionm2 == '5':
+            nombre = "Blush"
+            precio = preciosLimited[4]
+        elif opcionm2 == '0':
+            continue
+        else:
+            print("Opción inválida")
+            continue
 
-
-
-    # ======================== SALIR ========================
+    # ================= SALIR ======================
     elif opcionm1 == '0':
-        print(f"""
-╔══════════════════════════════╗
-   Gracias por visitar Rhode 
-   Total de tu compra: L.{total:.2f}
-   
-╚══════════════════════════════╝
-""")
-        break
-
+        mostrarFactura() # muestra todo lo comprado
+        break # rompe el while y termina el programa
     else:
-        print("\n Opción inválida. Intenta de nuevo.")
+        print("Opción inválida")
         continue
 
-    # ======================== ¿OTRO PRODUCTO? ========================
+    # ================= CANTIDAD ======================
+    cantidad = int(input(f"¿Cuántos '{nombre}' deseas? → "))
+    agregarCarrito(nombre, cantidad, precio)
+    subtotal = cantidad * precio
+    print(f"\nProducto: {nombre}")
+    print(f"Cantidad: {cantidad}")
+    print(f"Subtotal: L.{subtotal:.2f}")
+    #Solo llega aquí si se eligió un producto válido. Convierte el input a int, agrega al carrito, y muestra un resumen rápido.
+
+    # ================= OTRO PRODUCTO ======================
     otroproducto = input("""
 ¿Deseas agregar otro producto?
- 1. Sí
- 2. No
+1. Sí
+2. No
 → """)
-
     if otroproducto != '1':
-        print(f"""
-╔══════════════════════════════╗
-   Gracias por visitar Rhode 
-   Total de tu compra: L.{total:.2f}
-   
-╚══════════════════════════════╝
-""")
-        break
-
-
-
-
-
-
-
-
-
-
-
-
-
+        mostrarFactura()
+        break #Si el usuario escribe cualquier cosa que no sea '1', muestra la factura y termina.
 
