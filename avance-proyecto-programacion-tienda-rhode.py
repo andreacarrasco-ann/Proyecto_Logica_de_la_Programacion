@@ -194,3 +194,4 @@ while otroproducto == '1':
         mostrarFactura()
         break #Si el usuario escribe cualquier cosa que no sea '1', muestra la factura y termina.
 
+
