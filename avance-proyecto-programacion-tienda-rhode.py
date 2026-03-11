@@ -120,8 +120,8 @@ while otroproducto == '1':
             continue
 
     # ================= FACE COLOR ======================
-    elif opcionm1 == '2':
-        opcionm2 = menuFace()
+    elif opcionm1 == '2': # eligió Face Color
+        opcionm2 = menuFace() 
         if opcionm2 == '1':
             nombre = "Pocket Blush"
             precio = preciosFace[0]
@@ -144,7 +144,7 @@ while otroproducto == '1':
             continue
 
     # ================= LIMITED EDITION ======================
-    elif opcionm1 == '3':
+    elif opcionm1 == '3': # eligió Limited Edition
         opcionm2 = menuLimited()
         if opcionm2 == '1':
             nombre = "Lip Tint"
@@ -193,5 +193,6 @@ while otroproducto == '1':
     if otroproducto != '1':
         mostrarFactura()
         break #Si el usuario escribe cualquier cosa que no sea '1', muestra la factura y termina.
+
 
 
